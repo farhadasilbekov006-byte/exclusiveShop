@@ -1,10 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ProductQueryDto } from '../product.dto.ts/Product.dto';
 
-type PriceRange = {
-        $gte?: number;
-        $lte?: number;
-    }
 type ProductFilter = {
     name?: {
         $regex?: string;
@@ -12,7 +8,6 @@ type ProductFilter = {
     }
     category?: string;
     brand?: string;
-    price?: PriceRange;
 };
 
 
@@ -34,20 +29,6 @@ export class ProductQueryBuilder {
   
     if (query.brand) {
       filter.brand = query.brand;
-    }
-
-    if (query.min || query.max) {
-      const price: PriceRange = {};
-
-      if (query.min) {
-        price.$gte = query.min;
-      }
-
-      if (query.max) {
-        price.$lte = query.max;
-      }
-
-      filter.price = price;
     }
 
     return filter;

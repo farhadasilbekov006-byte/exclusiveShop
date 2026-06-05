@@ -28,7 +28,7 @@ export class ProductService {
 
     async remove(id: string) {
         await this.productModel.findByIdAndDelete(id).exec();
-        return {message: "headShot"}
+        return {message: "Товар удален"}
     }
 
     async findOne(id: string) {
