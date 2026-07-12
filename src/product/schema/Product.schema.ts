@@ -17,7 +17,6 @@ export class Product {
   @Prop()
   category: string;
   
-
   @Prop()
   brand: string;
   

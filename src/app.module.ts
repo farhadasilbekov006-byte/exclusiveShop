@@ -15,9 +15,7 @@ import { ContactsModule } from './contacts/contacts.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot(
-      'mongodb+srv://farhadAdilbekov:0909oppoFa@cluster0.7ribhjn.mongodb.net/Shop1'
-    ),
+    MongooseModule.forRoot(process.env.MONGODB_URL!),
     ProductModule,
     UserModule,
     AuthModule,
