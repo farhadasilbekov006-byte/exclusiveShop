@@ -8,7 +8,7 @@ async function bootstrap() {
 app.enableCors({
   origin: [
     'http://localhost:5173',
-    'https://shop2-j5ix92fk9-farhadasilbekov006-bytes-projects.vercel.app',
+    'https://shop2-fawn-sigma.vercel.app',
   ],
   credentials: true,
 });
